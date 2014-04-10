@@ -2,10 +2,6 @@
 
 Nginx docker container recipe.
 
-### Dependencies
-
-* [dockerfile/ubuntu](http://dockerfile.github.io/#/ubuntu)
-
 
 ### Installation
 
