@@ -52,8 +52,6 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Expose ports.
 EXPOSE 22
 
-# Supervisor sshd
-CMD ["/usr/bin/supervisord"]
 #################################################################################
 # Install Nginx.
 RUN apt-get install -y nginx
@@ -70,13 +68,8 @@ ADD ./nginx.conf /etc/nginx/nginx.conf
 # Attach volumes.
 VOLUME /var/log/nginx
 
-# Set working directory.
-#WORKDIR /etc/nginx
-
 # Expose ports.
 EXPOSE 80
 
-CMD ["nginx"]
-
-# Define default command.
-#ENTRYPOINT ["nginx"]
+# Supervisor 
+CMD ["/usr/bin/supervisord"]
